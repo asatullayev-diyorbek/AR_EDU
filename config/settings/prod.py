@@ -38,3 +38,9 @@ X_FRAME_OPTIONS = "DENY"
 # ─── Static files (served by nginx / CDN in prod) ─────────────────────────────
 
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+
+# ─── CORS ─────────────────────────────────────────────────────────────────────
+
+# model_viewer_plus WebView sends requests from http://localhost:<random-port>.
+# We can't predict that origin, so allow all for media/.glb delivery.
+CORS_ALLOW_ALL_ORIGINS = True
